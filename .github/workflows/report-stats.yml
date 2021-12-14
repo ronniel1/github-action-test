@@ -29,8 +29,8 @@ jobs:
             ${{ steps.version.outputs.value }}
       - name: send-stats
         run: |
-          echo: "reporting player size: ${{ steps.player-size.outputs.value }}\"
-          echo: "reporting editor size: ${{ steps.editor-size.outputs.value }}\"
+          echo: "reporting player size: ${{ steps.player-size.outputs.value }}"
+          echo: "reporting editor size: ${{ steps.editor-size.outputs.value }}"
           curl \
               --header "Authorization: Token ${{ secrets.seriesci_token }}" \
               --header "Content-Type: application/json" \
