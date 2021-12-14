@@ -10,23 +10,27 @@ on:
 jobs:
   report-stats:
     runs-on: ubuntu-latest
+    env:
+       STATS_FILE: data/stats.json
     steps:
       - uses: actions/checkout@v2
       - name: Extract editor's bundle size
         uses: sergeysova/jq-action@v2
         id: editor-size
         with:
-          cmd: jq ".entrypoints.editor.assetsSize" data/stats.json -r
+          cmd: jq ".entrypoints.editor.assetsSize" ${{ env.STATS_FILE }} -r
 
       - name: Extract player's bundle size
         uses: sergeysova/jq-action@v2
         id: player-size
         with:
-          cmd: jq ".entrypoints.player.assetsSize" data/stats.json -r
+          cmd: jq ".entrypoints.player.assetsSize" ${{ env.STATS_FILE }} -r
 
             ${{ steps.version.outputs.value }}
       - name: send-stats
         run: |
+          echo: "reporting player size: ${{ steps.player-size.outputs.value }}\"
+          echo: "reporting editor size: ${{ steps.editor-size.outputs.value }}\"
           curl \
               --header "Authorization: Token ${{ secrets.seriesci_token }}" \
               --header "Content-Type: application/json" \
