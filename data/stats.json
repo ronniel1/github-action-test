@@ -1,0 +1,98 @@
+{
+  "entrypoints": {
+  "editor": {
+    "name": "editor",
+    "chunks": [
+      189
+    ],
+    "assets": [
+      {
+        "name": "assets/css/editor/main.1329d325.css",
+        "size": 86837
+      },
+      {
+        "name": "assets/js/editor.f8bb6f89.js",
+        "size": 4596865
+      }
+    ],
+    "filteredAssets": 0,
+    "assetsSize": 4683702,
+    "auxiliaryAssets": [
+      {
+        "name": "assets/fonts/bf444c088d3b3f040b6e.otf",
+        "size": 63680
+      },
+      {
+        "name": "assets/fonts/ce9227b739bfd167c8a7.otf",
+        "size": 62624
+      },
+      {
+        "name": "assets/fonts/dea4009a47ec6f55832e.otf",
+        "size": 68564
+      },
+      {
+        "name": "assets/images/45ed9844a2e9ad006fe5.svg",
+        "size": 9140
+      },
+      {
+        "name": "assets/images/8ebfb5cb91d4d18f7dd4.png",
+        "size": 9801
+      },
+      {
+        "name": "assets/images/f90d73836b5c7317e4bc.png",
+        "size": 469205
+      }
+    ],
+    "filteredAuxiliaryAssets": 0,
+    "auxiliaryAssetsSize": 683014,
+    "children": {},
+    "childAssets": {},
+    "isOverSizeLimit": false
+  },
+  "player": {
+    "name": "player",
+    "chunks": [
+      35
+    ],
+    "assets": [
+      {
+        "name": "assets/css/player/main.1001b217.css",
+        "size": 82509
+      },
+      {
+        "name": "assets/js/player.e645ee72.js",
+        "size": 3237250
+      }
+    ],
+    "filteredAssets": 0,
+    "assetsSize": 3319759,
+    "auxiliaryAssets": [
+      {
+        "name": "assets/fonts/bf444c088d3b3f040b6e.otf",
+        "size": 63680
+      },
+      {
+        "name": "assets/fonts/ce9227b739bfd167c8a7.otf",
+        "size": 62624
+      },
+      {
+        "name": "assets/fonts/dea4009a47ec6f55832e.otf",
+        "size": 68564
+      },
+      {
+        "name": "assets/images/45ed9844a2e9ad006fe5.svg",
+        "size": 9140
+      },
+      {
+        "name": "assets/images/f90d73836b5c7317e4bc.png",
+        "size": 469205
+      }
+    ],
+    "filteredAuxiliaryAssets": 0,
+    "auxiliaryAssetsSize": 673213,
+    "children": {},
+    "childAssets": {},
+    "isOverSizeLimit": false
+  }
+  }
+}

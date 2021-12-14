@@ -1,8 +1,10 @@
 name: Triggers test
 on:
   push:
-  pull_request:
-    types: [opened, reopened, synchronize, closed]
+    branches:
+    - master
+  #pull_request:
+  #  types: [opened, reopened, synchronize, closed]
 
 # Note: By default, a workflow only runs when a pull_request's activity
 # type is: >> opened, synchronize, or reopened. <<
