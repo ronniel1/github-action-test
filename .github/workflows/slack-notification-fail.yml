@@ -10,8 +10,6 @@ on:
 jobs:
   report-stats:
     runs-on: ubuntu-latest
-    env:
-       STATS_FILE: data/stats.json
     steps:
       - name: Fail the Build
         uses: cutenode/action-always-fail@v1.0.0
