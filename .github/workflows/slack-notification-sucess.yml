@@ -1,0 +1,21 @@
+name: stats-reporting-test
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+
+jobs:
+  report-stats:
+    runs-on: ubuntu-latest
+    env:
+       STATS_FILE: data/stats.json
+    steps:
+#      - name: Fail the Build
+#        uses: cutenode/action-always-fail@v1.0.0
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
