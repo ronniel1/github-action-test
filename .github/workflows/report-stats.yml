@@ -47,12 +47,10 @@ jobs:
                 \"sha\":\"${GITHUB_SHA}\"
               }" \
               https://seriesci.com/api/${GITHUB_REPOSITORY}/editor-bundle-size/one
-      - name: Notify slack fail
-        #    if: failure()
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+      - name: Send Notification
+        uses: bayssmekanique/action-simple-slack-notifier@v1
+        if: always()
         with:
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          status: ${{ job.status }}
           channel: ci-cd-notifications
-          status: FAILED
-          color: danger
