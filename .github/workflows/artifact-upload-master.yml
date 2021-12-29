@@ -17,5 +17,5 @@ jobs:
        uses: actions/upload-artifact@v2
        with:
           name: master-stats
-          path: ./stats.txt
+          path: ./data/master.json
           retention-days: 20
