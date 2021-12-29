@@ -9,6 +9,7 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      - name: Download base artifact
+       continue-on-eror: true
        uses: dawidd6/action-download-artifact@v2
        with:
           name: master-stats
@@ -17,10 +18,12 @@ jobs:
           workflow: artifact-upload-master.yml
 
      - name: report stats file
+       continue-on-eror: true
        run: |
          find .
 
      - name: Get diff
+       continue-on-eror: true
        id: get-diff
        uses: NejcZdovc/bundle-size-diff@v1
        with:
@@ -28,6 +31,7 @@ jobs:
           pr_path: './data/assets.json'
 
      - name: Comment
+       continue-on-eror: true
        uses: NejcZdovc/comment-pr@v1.1.1
        with:
           file: 'comment.md'
@@ -38,4 +42,3 @@ jobs:
           DIFF: ${{steps.get-diff.outputs.diff_file_string}}
           DIFF_PERCENT: ${{steps.get-diff.outputs.percent}}
 
-    continue-on-eror: true
