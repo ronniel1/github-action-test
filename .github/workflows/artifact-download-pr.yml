@@ -14,6 +14,7 @@ jobs:
           name: master-stats
           path: ./
           commit: ${{ github.base_ref }}
+          workflow: artifact-upload-master.yml
 
      - name: report stats file
        run: |
