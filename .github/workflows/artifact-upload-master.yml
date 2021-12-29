@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
-       name: Create stats file
+     - name: Create stats file
        run: echo ${{ github.sha }} > stats.txt
 
      - name: Upload stats file to artifacts
