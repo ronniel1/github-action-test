@@ -24,7 +24,7 @@ jobs:
        id: get-diff
        uses: NejcZdovc/bundle-size-diff@v1
        with:
-          base_path: './base/master.json'
+          base_path: './base/master-small.json'
           pr_path: './data/assets.json'
 
      - name: Comment
