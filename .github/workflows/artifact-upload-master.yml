@@ -1,4 +1,4 @@
-name: stats-reporting-test
+name: articats push master
 on:
   push:
     branches:
