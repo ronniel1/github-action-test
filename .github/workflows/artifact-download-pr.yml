@@ -13,7 +13,7 @@ jobs:
        with:
           name: master-stats
           path: ./
-          commit: ${{ github.base_ref }}
+          commit:  ${{ github.event.pull_request.base.sha }}
           workflow: artifact-upload-master.yml
 
      - name: report stats file
