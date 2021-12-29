@@ -9,13 +9,13 @@ jobs:
   report-stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Create stats file
-        run: echo ${{ github.sha }} > stats.txt
+     - uses: actions/checkout@v2
+       name: Create stats file
+       run: echo ${{ github.sha }} > stats.txt
 
-      - name: Upload stats file to artifacts
-        uses: actions/upload-artifact@v2
-        with:
-           name: master-stats
-           path: ./stats.txt
-           retention-days: 20
+     - name: Upload stats file to artifacts
+       uses: actions/upload-artifact@v2
+       with:
+          name: master-stats
+          path: ./stats.txt
+          retention-days: 20
