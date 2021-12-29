@@ -12,13 +12,13 @@ jobs:
        uses: dawidd6/action-download-artifact@v2
        with:
           name: master-stats
-          path: ./
+          path: ./base/
           commit:  ${{ github.event.pull_request.base.sha }}
           workflow: artifact-upload-master.yml
 
      - name: report stats file
        run: |
          ls -l
-         cat ./master-stats
+         cat ./base/stats.txt
 
 
