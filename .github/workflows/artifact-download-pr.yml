@@ -5,6 +5,7 @@ on:
 
 jobs:
   fetch-stats:
+    continue-on-eror: true
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
