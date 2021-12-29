@@ -6,7 +6,6 @@ on:
 jobs:
   fetch-stats:
     runs-on: ubuntu-latest
-    continue-on-eror: true
     steps:
      - uses: actions/checkout@v2
      - name: Download base artifact
@@ -39,3 +38,4 @@ jobs:
           DIFF: ${{steps.get-diff.outputs.diff_file_string}}
           DIFF_PERCENT: ${{steps.get-diff.outputs.percent}}
 
+    continue-on-eror: true
