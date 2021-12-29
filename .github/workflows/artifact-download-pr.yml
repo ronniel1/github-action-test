@@ -1,0 +1,23 @@
+name: download articats from master
+on:
+  pull_request
+
+
+jobs:
+  fetch-stats:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v2
+     - name: Download base artifact
+       uses: dawidd6/action-download-artifact@v2
+       with:
+          name: master-stats
+          path: ./
+          commit: ${{ github.base_ref }}
+
+     - name: report stats file
+       run: |
+         ls -l
+         cat ./master-stats
+
+
