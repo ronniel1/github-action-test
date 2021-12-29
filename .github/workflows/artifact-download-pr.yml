@@ -20,6 +20,7 @@ jobs:
        run: |
          ls -l ./base
          cat ./base/stats.txt
+
      - name: Get diff
        id: get-diff
        uses: NejcZdovc/bundle-size-diff@v1
