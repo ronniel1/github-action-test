@@ -6,6 +6,7 @@ on:
 jobs:
   fetch-stats:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
      - uses: actions/checkout@v2
      - name: Download base artifact
@@ -26,7 +27,7 @@ jobs:
        with:
           base_path: './base/master-small.json'
           pr_path: './data/assets.json'
-
+     - uses: hmarr/debug-action@v2
      - name: Comment
        uses: NejcZdovc/comment-pr@v1.1.1
        with:
