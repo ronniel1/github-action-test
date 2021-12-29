@@ -5,8 +5,8 @@ on:
 
 jobs:
   fetch-stats:
-    continue-on-eror: true
     runs-on: ubuntu-latest
+    continue-on-eror: true
     steps:
      - uses: actions/checkout@v2
      - name: Download base artifact
