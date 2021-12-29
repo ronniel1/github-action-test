@@ -18,8 +18,7 @@ jobs:
 
      - name: report stats file
        run: |
-         ls -l ./base
-         cat ./base/stats.txt
+         find .
 
      - name: Get diff
        id: get-diff
