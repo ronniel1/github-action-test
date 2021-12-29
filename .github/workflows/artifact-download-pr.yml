@@ -21,20 +21,20 @@ jobs:
          ls -l ./base
          cat ./base/stats.txt
      - name: Get diff
-	  id: get-diff
-	  uses: NejcZdovc/bundle-size-diff@v1
-	  with:
-	    base_path: './base/master.json'
-	    pr_path: './data/assets.json'
+        id: get-diff
+        uses: NejcZdovc/bundle-size-diff@v1
+        with:
+          base_path: './base/master.json'
+          pr_path: './data/assets.json'
 
      - name: Comment
-	  uses: NejcZdovc/comment-pr@v1.1.1
-	  with:
-	    file: 'comment.md'
-	  env:
-	    GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-	    OLD: ${{steps.get-diff.outputs.base_file_string}}
-	    NEW: ${{steps.get-diff.outputs.pr_file_string}}
-	    DIFF: ${{steps.get-diff.outputs.diff_file_string}}
-	    DIFF_PERCENT: ${{steps.get-diff.outputs.percent}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: 'comment.md'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          OLD: ${{steps.get-diff.outputs.base_file_string}}
+          NEW: ${{steps.get-diff.outputs.pr_file_string}}
+          DIFF: ${{steps.get-diff.outputs.diff_file_string}}
+          DIFF_PERCENT: ${{steps.get-diff.outputs.percent}}
 
