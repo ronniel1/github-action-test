@@ -35,6 +35,7 @@ jobs:
       - name: Show events
         run: |
           echo "github.ref: ${{ github.ref }}"
+          echo "github.base_sha: ${{ github.base_sha }}"
           echo "github.base_ref: ${{ github.base_ref }}"
           echo "github.head_ref: ${{ github.head_ref }}"
           echo "github.action: ${{ github.action }}"
