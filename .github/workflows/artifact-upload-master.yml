@@ -17,7 +17,7 @@ jobs:
      - name: Reduce stats file size
        uses: sergeysova/jq-action@v2
        with:
-          cmd: jq "{ assets: .assets}" ./data/master.json -r > ./data/master-small.json 
+          cmd: 'jq "{ assets: .assets}" ./data/master.json -r > ./data/master-small.json' 
      - name: Upload stats file to artifacts
        uses: actions/upload-artifact@v2
        with:
