@@ -45,3 +45,9 @@ jobs:
           echo "github.event_path: ${{ github.event_path }}"
           echo "github.event.action: ${{ github.event.action }}"
           echo "github.event.pull_request.merged: ${{ github.event.pull_request.merged }}"
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+#    - run: npm install
+    - run: node output_env.js
