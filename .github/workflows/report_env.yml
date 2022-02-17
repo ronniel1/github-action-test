@@ -1,0 +1,40 @@
+name: Triggers test
+on:
+  #push:
+  #  branches:
+  #  - master
+  pull_request
+
+# Note: By default, a workflow only runs when a pull_request's activity
+# type is: >> opened, synchronize, or reopened. <<
+# To trigger workflows for more activity types, use the types keyword.
+
+## 1 When pushed to branch: > "On Push:" happened
+
+## 2 When opened a new PR > "On Pull Request:" happened
+#github.ref: refs/pull/1/merge
+#github.base_ref: master
+#github.head_ref: dev
+#github.event_name: pull_request
+#github.event_path: /home/runner/work/_temp/_github_workflow/event.json
+#github.event.action: opened
+#github.event.pull_request.merged: false
+
+## 3 When merged: > "On Push" happened
+#github.ref: refs/heads/master
+#github.action: run
+#github.event_name: push
+#github.event_path: /home/runner/work/_temp/_github_workflow/event.json
+#github.event.action:
+#github.event.pull_request.merged:
+
+jobs:
+  show-events:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: print output
+        run: node output_env.js
