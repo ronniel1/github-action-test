@@ -32,6 +32,9 @@ jobs:
   show-events:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
+
       - name: Show events
         run: |
           echo "github.ref: ${{ github.ref }}"
