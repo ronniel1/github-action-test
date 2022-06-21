@@ -18,7 +18,7 @@ jobs:
       - name: Dump context
         uses: crazy-max/ghaction-dump-context@v1
 
-      - uses: ./.github/actions/deploy-slack-notification
+      - uses: glowwVideo/github-actions/deploy-slack-notification@master
         with:
           slack-webhook: '${{ secrets.SLACK_DEPLOY_WEBHOOK }}'
           always-notify: 'true'
