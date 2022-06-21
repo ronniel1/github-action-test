@@ -22,6 +22,7 @@ jobs:
 
 
       - uses: ./.github/actions/deploy-slack-notification
+        if: always()
         with:
           slack-webhook: '${{ secrets.SLACK_DEPLOY_WEBHOOK }}'
           deploy-target: 'test-environment'
