@@ -34,7 +34,7 @@ runs:
 
 
 
-    - if: github.event_name != 'pull_request' && (failure() || ${{ inputs.always-notify == 'true'}})
+    - if: failure() || ${{ inputs.always-notify == 'true'}}
       name: Send slack notification
       uses: slackapi/slack-github-action@v1.18.0
       with:
