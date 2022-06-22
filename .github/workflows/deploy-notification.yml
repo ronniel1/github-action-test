@@ -1,0 +1,32 @@
+name: Deploy notification
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  release:
+    types:
+      - prereleased
+      - released
+
+jobs:
+  notify:
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
+          #- name: Try to fail
+          #run: exit 1
+
+
+          # - uses: ./.github/actions/deploy-slack-notification
+      - uses: glowwVideo/github-actions/deploy-slack-notification@master
+        if: always()
+        with:
+          slack-webhook: '${{ secrets.SLACK_DEPLOY_WEBHOOK }}'
+          deploy-target: 'test-environment'
+          always-notify: true
+
