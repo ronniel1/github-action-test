@@ -27,5 +27,5 @@ jobs:
         with:
           slack-webhook: '${{ secrets.SLACK_DEPLOY_WEBHOOK }}'
           deploy-target: 'test-environment'
-          alway-notify: true
+            #always-notify: true
 
