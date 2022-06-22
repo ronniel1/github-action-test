@@ -22,7 +22,7 @@ jobs:
 
 
           # - uses: ./.github/actions/deploy-slack-notification
-      - uses glowwVideo/github-actions/deploy-slack-notification@master
+      - uses: glowwVideo/github-actions/deploy-slack-notification@master
         if: always()
         with:
           slack-webhook: '${{ secrets.SLACK_DEPLOY_WEBHOOK }}'
