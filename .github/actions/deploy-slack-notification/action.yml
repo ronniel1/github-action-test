@@ -30,7 +30,7 @@ runs:
     - name: Echo input
       shell: bash
       run: |-
-        echo "always-notfy: ${{ inputs.always-notify }}"
+        echo "always-notfy: ${{ inputs.always-notify }}, job.status ${{ job.status }}"
 
 
 
