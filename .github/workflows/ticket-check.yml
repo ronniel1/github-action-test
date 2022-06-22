@@ -1,0 +1,19 @@
+name: title check
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  Check ticket:
+    # if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: glowwVideo/title-check-action@v0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ticketPrefix: 'SPTL-'
+          titleRegex: 'SPTL-(?<ticketNumber>\d+|NA)'
+          branchRegex: 'SPTL-(?<ticketNumber>\d+)'
+          bodyRegex: 'SPTL-(?<ticketNumber>\d+)'
+
