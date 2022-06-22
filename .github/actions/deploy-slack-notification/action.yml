@@ -34,7 +34,7 @@ runs:
 
 
 
-    - if: ${{ inputs.is-failure || inputs.always-notify == 'true'}}
+    - if: ${{ jog.status == 'failure' || inputs.always-notify == 'true'}}
       name: Send slack notification
       uses: slackapi/slack-github-action@v1.18.0
       with:
