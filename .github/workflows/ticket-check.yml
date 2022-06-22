@@ -9,7 +9,7 @@ jobs:
     # if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - uses: glowwVideo/ticket-check-action@v0.1
+      - uses: glowwVideo/ticket-check-action@v0.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ticketPrefix: 'SPTL-'
