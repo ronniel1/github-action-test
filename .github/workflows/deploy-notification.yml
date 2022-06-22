@@ -26,5 +26,5 @@ jobs:
         with:
           slack-webhook: '${{ secrets.SLACK_DEPLOY_WEBHOOK }}'
           deploy-target: 'test-environment'
-            # is-failure: ${{ failure() }}
+          alway-notify: true
 
