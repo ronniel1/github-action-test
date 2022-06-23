@@ -1,0 +1,14 @@
+name: PR compilance check
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+jobs:
+  compliance:
+    # if: ${{ false }}
+    uses: glowwVideo/github-actions/.github/workflows/pr-compliance-check.yml@ronnie/compliance
